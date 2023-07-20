@@ -1,5 +1,15 @@
+<link rel="stylesheet" href="styles.css">
+<table>
+<tr class="table-head">
+    <th>Id</th>
+    <th>Username</th>
+    <th>E-mail</th>
+    <th>Address</th>
+    <th>Comment</th>
+    <th>Timestamp</th>
+    
+</tr>
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $dsn = 'mysql:host=localhost;dbname=git-test-V';
         $username = 'root';
@@ -8,29 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $con = new PDO($dsn, $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Prepare and execute the insert statement
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $address = $_POST['address'];
-        $comment = $_POST['comment'];
-
-        $stmt = $con->prepare("INSERT INTO comments (username, email, address, comment) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$username, $email, $address, $comment]);
-
-        if ($stmt->rowCount() > 0) {
-            // Insertion successful
-            header('Location: index.php');
-            exit;
-        } else {
-            // Insertion failed
-            echo "Error: Insertion failed.";
+        $stmt = $con->query('SELECT * FROM comments ORDER BY id DESC LIMIT 15');
+        if (!$stmt) {
+            exit('クエリの実行に失敗しました。');
         }
 
-        $stmt = null;
-    } catch (PDOException $e) {
-        exit('データベースに接続できませんでした。Error: ' . $e->getMessage()); // Display the actual error message for debugging
-    } finally {
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $id = $data['id'];
+
+            echo '<tr><td>'. $id . '</td>';
+            echo '<td>' . $data['username'] . '</td><td>' . $data['email'] . '</td><td> '. $data['address'] .'</td><td>' . $data['comment'] . '</td>';
+            echo '<td>' . $data['timestamp'] . '</td><td>';
+            echo '</tr>';
+        }
+        } catch(PDOException $e) {
+        exit('データベースに接続できませんでした。');
+         }
+
         $con = null;
-    }
-}
-?>
+        ?>
+</table>

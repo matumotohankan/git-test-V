@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="styles.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -11,10 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Prepare and execute the insert statement
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $phone = $_POST['address'];
+        $address = $_POST['address'];
         $comment = $_POST['comment'];
+     
 
-        $stmt = $con->prepare("INSERT INTO comments (username, email, address, comment,) VALUES (?, ?, ?, ?, ?, NOW())");
+        $stmt = $con->prepare("INSERT INTO comments (username, email, address, comment, timestamp) VALUES (?, ?, ?, ?, NOW())");
         $stmt->execute([$username, $email, $address, $comment]);
 
         if ($stmt->rowCount() > 0) {
@@ -34,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<form id="postForm" method="POST" action="comments.php">
+<div class="user-form">
+<form id="postForm" method="POST" action="index.php">
                 <label for="username">Name:</label>
                 <input name="username" type="text" id="username" minlength="4" maxlength="15" placeholder="ニックネーム"/>
                 <label for="email">E-mail:</label>
@@ -46,3 +48,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea id="comment" name="comment" placeholder="内容"></textarea>
                 <input type="submit" value="Submit"  class="submit-button" id="btnSubmit">
 </form>
+</div>

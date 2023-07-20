@@ -10,7 +10,7 @@
 <body>
     <div class ="container">
     <h1 class="m-4 text-center">Git/PHP/SQL test assignment</h1>
-        <section class="container-profile ">
+        <div class="container-profile ">
         <div class="container-profile-row row container-fluid">
             <div class="container-profile-photo col-sm-5 col-md-6">
             <img src="images/profile-pfp2.jpg" class="img-responsive" alt="">
@@ -22,11 +22,11 @@
             </div><!-- container-profile-text -->
         </div><!-- container-profile-row row -->
 
-        </section><!-- container-profile -->
+        </div><!-- container-profile -->
 
-        <section class="container-comments">
-
-        </section><!-- container-comments -->
+        <div class="container-comments">
+        <?php include 'comments.php'; ?>
+        </div><!-- container-comments -->
         <div class="container-form">
         <?php include 'form.php'; ?>
         </div><!-- container-form -->
