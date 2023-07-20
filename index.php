@@ -9,13 +9,18 @@
 </head>
 <body>
     <div class ="container">
-        <section class="container-profile">
-        <div class="container-profile-photo">
+    <h1 class="m-4 text-center">Git/PHP/SQL test assignment</h1>
+        <section class="container-profile ">
+        <div class="container-profile-row row container-fluid">
+            <div class="container-profile-photo col-sm-5 col-md-6">
+            <img src="images/profile-pfp2.jpg" class="img-responsive" alt="">
+            </div><!-- container-profile-photo -->
 
-        </div><!-- container-profile-photo -->
-        <div class="container-profile-text">
-
-        </div><!-- container-profile-text -->
+            <div class="container-profile-text col-sm-5 col-md-6 text-center">
+                <p>私の名前はイサドラです。ブラジル出身です。私は犬と晴れた日が大好きです。趣味はNetflixを見ることと真犯罪のポッドキャストを聴くことです。最近、プログラミング学習の旅に出ました。この分野で熟練したプロフェッショナルになることを決意しています。</p>
+            <p>My name is Isadora, and I'm from Brazil. I love dogs and sunny days. My hobbies include watching Netflix and listening to true crime podcasts. Recently, I have embarked on a journey to learn programming, and I am determined to become a skilled professional in this field.</p>
+            </div><!-- container-profile-text -->
+        </div><!-- container-profile-row row -->
 
         </section><!-- container-profile -->
         <section class="container-form">
