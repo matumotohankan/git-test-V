@@ -1,14 +1,53 @@
 body {
     margin: 0 auto;
-    background-color: blanchedalmond;
+    background-color: rgb(247, 227, 255);
 }
-.container-profile-photo img{
+.container-profile{
+    background-color: rgba(255, 255, 255, 0.74);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+}
+.container-profile-photo{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
+}
+img{
+    border-radius: 150px;
 }
 
+.container-middle{
+    background: rgba(255, 255, 255, 0.74);
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+}
+.container-comments{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.container-form{
+    text-align: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.74);
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+input{
+    justify-content: center;
+    width: 80%;
+}
+label {
+    font-weight: bolder;
+}
 textarea {
     display: block;
     resize: none;
@@ -18,3 +57,11 @@ textarea {
     margin-bottom: 10px;
     color: var(--text-color);
   }
+  .container-table{
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.664);
+  }
+  tr, td, th  {
+    border: 1px solid black;
+  }
+  

@@ -36,16 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<div class="user-form">
+
 <form id="postForm" method="POST" action="index.php">
                 <label for="username">Name:</label>
-                <input name="username" type="text" id="username" minlength="4" maxlength="15" placeholder="ニックネーム"/>
+                <input name="username" type="text" id="username" minlength="4" maxlength="15" placeholder="ニックネーム"/><br />
                 <label for="email">E-mail:</label>
-                <input name="email" type="email" id="email" placeholder="メールアドレス"/>
+                <input name="email" type="email" id="email" placeholder="メールアドレス"/><br />
                 <label for="address">Address:</label>
-                <input name="address" type="text" id="address" placeholder="住所を入力してください"/>
-                <label for="comment">Comment:</label>
+                <input name="address" type="text" id="address" placeholder="住所を入力してください"/><br />
+                <label for="comment">Comment:</label><br />
                 <textarea id="comment" name="comment" placeholder="内容"></textarea>
                 <input type="submit" value="Submit"  class="submit-button" id="btnSubmit">
 </form>
-</div>

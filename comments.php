@@ -28,7 +28,7 @@
 
             echo '<tr><td>'. $id . '</td>';
             echo '<td>' . $data['username'] . '</td><td>' . $data['email'] . '</td><td> '. $data['address'] .'</td><td>' . $data['comment'] . '</td>';
-            echo '<td>' . $data['timestamp'] . '</td><td>';
+            echo '<td>' . $data['timestamp'] . '</td>';
             echo '</tr>';
         }
         } catch(PDOException $e) {
