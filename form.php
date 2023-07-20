@@ -11,10 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Prepare and execute the insert statement
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $address = $_POST['address'];
+        $phone = $_POST['address'];
         $comment = $_POST['comment'];
 
-        $stmt = $con->prepare("INSERT INTO comments (username, email, address, comment) VALUES (?, ?, ?, ?)");
+        $stmt = $con->prepare("INSERT INTO comments (username, email, address, comment,) VALUES (?, ?, ?, ?, ?, NOW())");
         $stmt->execute([$username, $email, $address, $comment]);
 
         if ($stmt->rowCount() > 0) {
@@ -34,3 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+<form id="postForm" method="POST" action="comments.php">
+                <label for="username">Name:</label>
+                <input name="username" type="text" id="username" minlength="4" maxlength="15" placeholder="ニックネーム"/>
+                <label for="email">E-mail:</label>
+                <input name="email" type="email" id="email" placeholder="メールアドレス"/>
+                <label for="address">Address:</label>
+                <input name="address" type="text" id="address" placeholder="住所を入力してください"/>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" placeholder="内容"></textarea>
+                <input type="submit" value="Submit"  class="submit-button" id="btnSubmit">
+</form>

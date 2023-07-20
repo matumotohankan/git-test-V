@@ -17,19 +17,19 @@
             </div><!-- container-profile-photo -->
 
             <div class="container-profile-text col-sm-5 col-md-6 text-center">
-                <p>私の名前はイサドラです。ブラジル出身です。私は犬と晴れた日が大好きです。趣味はNetflixを見ることと真犯罪のポッドキャストを聴くことです。最近、プログラミング学習の旅に出ました。この分野で熟練したプロフェッショナルになることを決意しています。</p>
+            <p>わたしはタグチ　イザドラ　チエミです。　ブラジル出身です。わたしが子供のころから犬がだいすきですけど、アレルギーがもって、犬を飼うのは無理です。趣味はネットフリックスを見ることと真犯罪のポッドキャストを聴くことです。最近、プログラミング学習の旅に出ました。</p>
             <p>My name is Isadora, and I'm from Brazil. I love dogs and sunny days. My hobbies include watching Netflix and listening to true crime podcasts. Recently, I have embarked on a journey to learn programming, and I am determined to become a skilled professional in this field.</p>
             </div><!-- container-profile-text -->
         </div><!-- container-profile-row row -->
 
         </section><!-- container-profile -->
-        <section class="container-form">
 
-        </section><!-- container-form -->
         <section class="container-comments">
 
         </section><!-- container-comments -->
-
+        <div class="container-form">
+        <?php include 'form.php'; ?>
+        </div><!-- container-form -->
     </div>
 </body>
 </html>
